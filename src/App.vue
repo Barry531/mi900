@@ -2,14 +2,14 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <!-- <router-view/> -->
-    <home></home>
+    <!-- <home></home> -->
     <footerbar></footerbar>
   </div>
 </template>
 
 <script>
 
-import home from "./components/home/home.vue";
+// import home from "./components/home/home.vue";
 import footerbar from "./components/footer/footerbar.vue";
 
 
@@ -20,7 +20,7 @@ export default {
 		}
 	},
 	components:{
-  		home,
+  		// home,
       footerbar
   }
 
@@ -28,5 +28,8 @@ export default {
 </script>
 
 <style>
-
+*{
+  margin:0;
+  padding:0;
+}
 </style>

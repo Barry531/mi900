@@ -9,15 +9,15 @@ import mine from '../components/footer/mine.vue'
 import type from '../components/footer/type.vue'
 import sail from '../components/footer/sail.vue'
 
-import home from '../components/home/home.vue'
+// import home from '../components/home/home.vue'
 
 
 export default new Router({
   routes: [
-    {
-      path: '/home',
-      component:home
-    },
+    // {
+    //   path: '/home',
+    //   component:home
+    // },
     
     {
       path:'/footerbar',
@@ -45,7 +45,7 @@ export default new Router({
           },
              {
             path:'*',
-            redirect:'/home'
+            redirect:'/index'
           }
       ]
     }
