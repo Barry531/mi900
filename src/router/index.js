@@ -8,7 +8,8 @@ import index from '../components/footer/index.vue'
 import mine from '../components/footer/mine.vue'
 import type from '../components/footer/type.vue'
 import sail from '../components/footer/sail.vue'
-
+import login from '../components/footer/mine/login.vue'
+import register from '../components/footer/mine/register.vue'
 // import home from '../components/home/home.vue'
 
 
@@ -33,7 +34,17 @@ export default new Router({
           },
           {
             path:'mine',
-            component:mine
+            component:mine,
+            children:[
+              {
+                path:'login',
+                component:login
+              },
+              {
+                path:'register',
+                component:register
+              }
+            ]
           },
           {
             path:'sail',
