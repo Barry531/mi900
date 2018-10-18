@@ -23,10 +23,10 @@ export default new Router({
       path:'/footerbar',
       component:footerbar,
       children:[
-          // {
-          //   path:'/index',
-          //   component:index
-          // },
+          {
+            path:'/index',
+            component:index
+          },
           {
             path:'collect',
             component:collect
