@@ -11,26 +11,35 @@
 			</header><!-- /header -->
 			<sidebar v-show="isShow">
 			<ul>
-				<li><i class="iconfont icon1 icon-shouye"></i><a href="/home" >首页</a></li>
+				<li><i class="iconfont icon1 icon-shouye"></i><a href="/index" >首页</a></li>
 				<li><i class="iconfont icon1 icon-xingtaiduICON_sousuo--"></i><a href="#2" >搜索</a></li>
 				<li><i class="iconfont icon1 icon-kefu"></i><a href="#3" >客服</a></li>
 				<li><i class="iconfont icon1 icon-fankui"></i><a href="#4" >反馈</a></li>
 				<li><i class="iconfont icon1 icon-wode"></i><a href="/#/footerbar/mine" >我的</a></li>
 			</ul>
 			</sidebar>
+			<!-- <div class="swiper-container">
+				<div class="swiper-wrapper">
+    				<div class="swiper-slide" v-for="data in looplist">
+    					<img src="">
+    				</div>
+				</div>				
+			</div> -->
 		</div>
 	</template>
 	<script>
+	// import "swiper/dist/css/swiper.css"
 	import sidebar from "./sail/sidebar.vue"
 	export default{
 		data(){
 			return {
-				isShow:false
+				isShow:false,
+				// looplist:[]
 			}
 		},
 	methods:{
 		handleclick(){
-			location.href="/home"
+			location.href="/index"
 			}
 
 		},
