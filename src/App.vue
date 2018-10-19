@@ -3,8 +3,9 @@
     <!-- <img src="./assets/logo.png"> -->
     <!-- <router-view/> -->
     <!-- <home></home> -->
-    <footerbar></footerbar>
-    <search></search>
+    <footerbar>
+    </footerbar>
+
   </div>
 </template>
 
@@ -12,7 +13,7 @@
 
 // import home from "./components/home/home.vue";
 import footerbar from "./components/footer/footerbar.vue";
-import search from "./components/footer/index/search.vue";
+
 
 
 export default {
@@ -23,8 +24,8 @@ export default {
 	},
 	components:{
   		// home,
-      footerbar,
-      search
+      footerbar
+    
   }
 
 }

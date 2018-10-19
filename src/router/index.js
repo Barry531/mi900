@@ -9,7 +9,8 @@ import mine from '../components/footer/mine.vue'
 import type from '../components/footer/type.vue'
 import sail from '../components/footer/sail.vue'
 import search from '../components/footer/index/search.vue'
-
+import searchpop from '../components/footer/index/searchpop.vue'
+import download from '../components/footer/index/download.vue'
 // import home from '../components/home/home.vue'
 
 
@@ -25,8 +26,18 @@ export default new Router({
       component:footerbar,
       children:[
           {
-            path:'/index',
-            component:index
+            path:'index',
+            component:index,
+            children:[
+                 {
+                  path:'/index/search',
+                  component:search,
+                 
+     
+
+                  
+                },
+            ]
           },
           {
             path:'collect',
@@ -44,15 +55,19 @@ export default new Router({
             path:'type',
             component:type
           },
-          {
-            path:'search',
-            component:search
-          },
-             {
+         {
             path:'*',
-            redirect:'/index'
+            redirect:'/footer/index'
           }
       ]
+    },
+   {
+      path:'/searchpop',
+      component:searchpop
+    },
+    {
+      path:'/download',
+      component:download
     }
     
   ]
