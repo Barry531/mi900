@@ -10,6 +10,7 @@ import type from '../components/footer/type.vue'
 import sail from '../components/footer/sail.vue'
 import login from '../components/footer/mine/login.vue'
 import register from '../components/footer/mine/register.vue'
+import setter from '../components/footer/mine/setter.vue'
 // import home from '../components/home/home.vue'
 
 
@@ -35,17 +36,7 @@ export default new Router({
           {
             path:'mine',
             component:mine,
-            children:[
-              {
-                path:'login',
-                component:login
-              },
-              {
-                path:'register',
-                component:register
-              }
-            ]
-          },
+          },        
           {
             path:'sail',
             component:sail
@@ -59,7 +50,19 @@ export default new Router({
             redirect:'/index'
           }
       ]
+    },
+    {
+      path:'/login',
+      component:login
+    },
+    {
+      path:'/register',
+      component:register
+    },
+   {
+      path:'/setter',
+      component:setter
     }
-    
+
   ]
 })
