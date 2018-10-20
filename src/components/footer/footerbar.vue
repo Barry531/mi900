@@ -1,7 +1,7 @@
 <template>
 	<footer>
 		<router-view></router-view>
-		<ul>
+		<ul v-show="$store.state.isShow">
 			<router-link to="/footerbar/index" tag="li"><img src="../../../build/shouye.png"><br/>首页</router-link>
 			<router-link to="/footerbar/sail" tag="li"><img src="../../../build/99.png"><br/>9.9包邮<span>新</span></router-link>
 			<router-link to="/footerbar/type" tag="li"><img src="../../../build/lei.png"><br/>分类</router-link>
@@ -15,7 +15,7 @@
 <script>
 
 	export default{
-	
+
 		
 	}
 

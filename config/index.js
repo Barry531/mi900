@@ -11,6 +11,7 @@ module.exports = {
     assetsSubDirectory: 'static',     
     assetsPublicPath: '/',
     proxyTable: {
+
             // '/v4':{
             //     target:'http://m.maizuo.com',
             //     host:'maizuo.com',
@@ -21,8 +22,15 @@ module.exports = {
                 target:'http://mi900.com',
                 host:'mi900.com',
                 changeOrigin:true
-            }
+            },
+
+        '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      }
     },
+
+  
 
 
     // Various Dev Server settings
@@ -49,7 +57,8 @@ module.exports = {
     cssSourceMap: true
   },
 
-  build: {
+  
+    build:{
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 

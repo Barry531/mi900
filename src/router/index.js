@@ -8,9 +8,21 @@ import index from '../components/footer/index.vue'
 import mine from '../components/footer/mine.vue'
 import type from '../components/footer/type.vue'
 import sail from '../components/footer/sail.vue'
+
 import detail from '../components/footer/detail.vue'
 
-// import home from '../components/home/home.vue'
+
+
+import search from '../components/footer/index/search.vue'
+import searchfilm from '../components/footer/index/searchfilm.vue'
+import searchpop from '../components/footer/index/searchpop.vue'
+import searchpop2 from '../components/footer/index/searchpop2.vue'
+import download from '../components/footer/index/download.vue'
+
+import login from '../components/footer/mine/login.vue'
+import register from '../components/footer/mine/register.vue'
+import setter from '../components/footer/mine/setter.vue'
+
 
 
 export default new Router({
@@ -26,7 +38,15 @@ export default new Router({
       children:[
           {
             path:'index',
-            component:index
+
+            component:index,
+            children:[
+                 {
+                  path:'/index/search',
+                  component:search,
+                 },
+            ]
+
           },
           {
             path:'collect',
@@ -34,8 +54,8 @@ export default new Router({
           },
           {
             path:'mine',
-            component:mine
-          },
+            component:mine,
+          },        
           {
             path:'sail',
             component:sail
@@ -44,6 +64,7 @@ export default new Router({
             path:'type',
             component:type
           },
+
            {
             path:'*',
             redirect:'footerbar/index'
@@ -53,7 +74,50 @@ export default new Router({
           {
             path:'/detail/:hp',
             component:detail
-          }
-    
+          },
+
+         {
+            path:'*',
+            redirect:'/footer/index'
+          },
+
+   {
+      path:'/searchfilm',
+      component:searchfilm,
+      children:[
+    {
+      path:'/searchpop',
+      component:searchpop
+    },
+    {
+      path:'/searchpop2',
+      component:searchpop2
+    },
+    {
+      path:"/",
+      redirect:"/searchpop"
+    }
+
+      ]
+    },
+    {
+      path:'/download',
+      component:download
+    },
+
+    {
+      path:'/login',
+      component:login
+    },
+    {
+      path:'/register',
+      component:register
+    },
+   {
+      path:'/setter',
+      component:setter
+
+    }
+
   ]
 })
