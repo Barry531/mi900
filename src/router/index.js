@@ -8,6 +8,7 @@ import index from '../components/footer/index.vue'
 import mine from '../components/footer/mine.vue'
 import type from '../components/footer/type.vue'
 import sail from '../components/footer/sail.vue'
+import detail from '../components/footer/detail.vue'
 
 // import home from '../components/home/home.vue'
 
@@ -24,7 +25,7 @@ export default new Router({
       component:footerbar,
       children:[
           {
-            path:'/index',
+            path:'index',
             component:index
           },
           {
@@ -43,12 +44,16 @@ export default new Router({
             path:'type',
             component:type
           },
-             {
+           {
             path:'*',
-            redirect:'/index'
+            redirect:'footerbar/index'
           }
       ]
-    }
+    },
+          {
+            path:'/detail/:hp',
+            component:detail
+          }
     
   ]
 })

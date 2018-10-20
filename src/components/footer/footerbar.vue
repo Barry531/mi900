@@ -30,10 +30,13 @@
 	footer{
 		width:100%;
 		height:100%;
+		z-index:20;
+		background:#fff
 	}
 	ul{ 
 		height:50px;
 		// line-height:50px;
+		 background:white;
 		list-style:none;
 		text-align: center;
 		width:100%;
