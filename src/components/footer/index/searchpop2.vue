@@ -1,6 +1,6 @@
 	<template>
 		<div>
-			searchpop1
+			searchpop2
 		</div>
 	</template>
 	<script>

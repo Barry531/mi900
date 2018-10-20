@@ -1,13 +1,12 @@
 	<template>
 		<div>
 			<ul>
-				<router-link to="/searchpop"  tag="li" >
+				<router-link to="/searchfilm"  tag="li" >
 					<input type="text" value="输入您需要的商品名称" >
 					<i class="iconfont icon-xingtaiduICON_sousuo--"></i>
 				</router-link>
 				<router-link to="/download"  tag="li"><span class="iconfont icon-64xiazaiapp"></span></router-link>
 					<!-- <router-view></router-view> -->
-
 			</ul>
 			
 			
@@ -25,7 +24,8 @@
 		},
 			methods:{
 
-		},
+
+		}
 
 	}
 	</script>

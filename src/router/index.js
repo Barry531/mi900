@@ -10,7 +10,9 @@ import type from '../components/footer/type.vue'
 import sail from '../components/footer/sail.vue'
 // <<<<<<< HEAD
 import search from '../components/footer/index/search.vue'
+import searchfilm from '../components/footer/index/searchfilm.vue'
 import searchpop from '../components/footer/index/searchpop.vue'
+import searchpop2 from '../components/footer/index/searchpop2.vue'
 import download from '../components/footer/index/download.vue'
 // =======
 import login from '../components/footer/mine/login.vue'
@@ -38,11 +40,7 @@ export default new Router({
                  {
                   path:'/index/search',
                   component:search,
-                 
-     
-
-                  
-                },
+                 },
             ]
           },
           {
@@ -69,8 +67,23 @@ export default new Router({
     },
 // <<<<<<< HEAD
    {
+      path:'/searchfilm',
+      component:searchfilm,
+      children:[
+    {
       path:'/searchpop',
       component:searchpop
+    },
+    {
+      path:'/searchpop2',
+      component:searchpop2
+    },
+    {
+      path:"/",
+      redirect:"/searchpop"
+    }
+
+      ]
     },
     {
       path:'/download',
