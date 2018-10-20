@@ -38,11 +38,10 @@ export default new Router({
       children:[
           {
             path:'index',
-
             component:index,
             children:[
                  {
-                  path:'/index/search',
+                  path:'index/search',
                   component:search,
                  },
             ]
@@ -78,7 +77,7 @@ export default new Router({
 
          {
             path:'*',
-            redirect:'/footer/index'
+            redirect:'/footerbar/index'
           },
 
    {
