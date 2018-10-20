@@ -35,7 +35,7 @@ export default new Router({
           },
           {
             path:'mine',
-            component:mine,
+            component:mine
           },        
           {
             path:'sail',

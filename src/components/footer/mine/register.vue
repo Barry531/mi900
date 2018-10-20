@@ -5,21 +5,21 @@
 		<ul>
 			<li class="username">
 				<div class="font">用户名:</div><br/>
-				<div><input type="text" name="username"></div><br/>
+				<div><input type="text"v-model="username"></div><br/>
 			</li>
 			<li class="password">
 				<div class="font">密码：</div><br/>
-				<div ><input type="password" name="password"></div><br/>
+				<div ><input type="password" v-model="password"></div><br/>
 			</li>
 			<li class = "password2">
 				<div class="font">确认密码：</div><br/>
-				<div><input type="password" name="password2"></div><br/>
+				<div><input type="password" v-model="password2"></div><br/>
 			</li>
 			<li class = "submit">
 				<div><input type="submit" value="注册" @click="register"></div><br/>
 			</li>
 			<li class = "submit2">
-				<div><input type="submit" value="您已注册，点击登陆" name="submit2"></div><br/>
+				<div><input type="submit" value="您已注册，点击登陆" @click="registerlogin"></div><br/>
 			</li>
 
 		</ul>	
@@ -27,10 +27,13 @@
 </template>
 <script>
 import goback from './goback.vue'
+import { Toast } from 'mint-ui';
 export default{
 	data(){
 		return{
-
+			username:'',
+			password:'',
+			password2:''
 		}
 	},
 	beforeMount(){
@@ -43,18 +46,62 @@ export default{
 	},
 	methods:{
 		register(){
-	      this.$http.post('/api/register', {
+
+	      this.$axios.post('/api/register', {
 	        username: this.username,
-	        password: this.password
+	        password: this.password,
+	        password2:this.password2
 	      }).then((res) => {
-	        // console.log(res.data);
-	        this.$router.push({
-	          path: '/login'
-	        });
-	        // window.location.href = "http://localhost:8080"
+	        console.log(res.data);
+	        if(res.data === 'namekong'){
+	        	// alert("用户名不能为空")
+	        	Toast({
+				  message: '用户名不能为空',
+				  position: 'middle',
+				  duration: 2000
+				});
+	        }else if(res.data==="passwordkong"){
+	        	// alert('密码不能为空')
+	        	Toast({
+				  message: '密码不能为空',
+				  position: 'middle',
+				  duration: 2000
+				});
+	        }else if(res.data==="passwordunlike"){
+	        	// alert('两次密码不一致')
+	        	Toast({
+				  message: '两次密码不一致',
+				  position: 'middle',
+				  duration: 2000
+				});
+	        }else if(res.data==='yonghuyizhuce'){
+	        	// alert('用户名已存在')
+	        	Toast({
+				  message: '用户名已存在',
+				  position: 'middle',
+				  duration: 2000
+				});
+	        }else if(res.data==='zhucechenggong'){
+	        	Toast({
+				  message: '注册成功',
+				  iconClass: 'iconfont icon-hudun'
+				});
+	        	this.$router.push({
+		          path: '/login'
+		        });
+		        // window.location.href = "http://localhost:8080"
+	        }
+	        
 	      })
+    },
+    registerlogin(){
+    	return this.$router.push({path:'/login'})
     }
-	}
+
+
+
+
+}
   
 	
 	

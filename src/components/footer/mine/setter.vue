@@ -2,12 +2,14 @@
 	<div id="goback">
 		<div id="reg">
 			<goback></goback>
+			
 		</div>
-		
+		<setterchildren></setterchildren>
 	</div>
 </template>
 <script>
 import goback from './goback.vue'
+import setterchildren from './setterchildren'
 export default{
 
 	beforeMount(){
@@ -15,7 +17,8 @@ export default{
 		this.$store.commit('changeName',"设置")
 	},
 	components:{
-		goback
+		goback,
+		setterchildren
 	}
 	
 	

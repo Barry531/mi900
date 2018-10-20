@@ -9,15 +9,20 @@
 				<router-link to="/register" tag="li" class="left">注册</router-link>
 
 			</ul>
-			<router-view></router-view>
-			
+				
 		</header>
+		<loginlist></loginlist>
+		<router-view></router-view>
 	</div>
 </template>
 <script>
+import loginlist from './mine/loginlist.vue'
 	export default{
 		mounted(){
 			this.$store.commit('changeisShow',true)
+		},
+		components:{
+			loginlist
 		}
 		
 			
@@ -66,7 +71,10 @@
 
 		 
 	}
-
+.loginlist{
+	height:100%;
+	background:#d9d9d9;
+}
 
 	
 </style>
